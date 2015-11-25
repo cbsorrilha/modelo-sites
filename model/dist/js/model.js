@@ -1,0 +1,1 @@
+!function(){var a=document.getElementById("modelo");a.addEventListener("click",function(a){alert("Isso é um modelo")})}();
