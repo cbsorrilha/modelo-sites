@@ -1,0 +1,117 @@
+/* =======================================
+   --------  Tools / sprite ---------
+   ======================================= */
+
+@import "compass/utilities/sprites";
+
+$sprites: sprite-map("sprite/*.png", $spacing: 10px);
+
+@mixin bg-sprite(
+  $name,
+  $display: inline-block,
+  $height: image-height(sprite-file($sprites, $name)),
+  $width: image-width(sprite-file($sprites, $name)) ) {
+
+    display: $display;
+    background-repeat: no-repeat;
+    background-image: sprite-url($sprites);
+    background-position: sprite-position($sprites, $name);
+    height: $height;
+    width: $width;
+}
+
+/* =======================================
+   --------  Tools / border radius ---------
+   ======================================= */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/* =======================================
+   --------  Tools / placeholder ---------
+   ======================================= */
+
+@mixin placeholder($color){
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}
+
+/* =======================================
+   --------  Tools / grid ---------
+   ======================================= */
+
+@mixin grid($tamanho, $align: top, $height: auto, $font-size: 14px){
+  display: inline-block;
+  width: $tamanho;
+  height: $height;
+  vertical-align: $align;
+  @include font-size($font-size);
+}
+
+/* =======================================
+   --------  Tools / REM ---------
+   ======================================= */
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/* =======================================
+   --------  Tools / button ---------
+   ======================================= */
+
+@mixin button($background: #fff, $color: $primary, $padding: 10px 30px, $border: 1px solid $primary-c ){
+  border: $border;
+  background: $background;
+  color: $color;
+  // @include border-radius($border-r);
+  padding: $padding;
+  -webkit-appearance: none;
+}
+
+/* =======================================
+   --------  Tools / Titulo ---------
+   ======================================= */
+
+@mixin main-title($size, $color: $primary) {
+  color: $color;
+  @include font-size($size);
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+/* =======================================
+   --------  Tools / Quick resets ---------
+   ======================================= */
+
+%zero-box{
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+%display-none{
+  display: none !important;
+}
