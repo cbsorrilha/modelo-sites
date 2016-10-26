@@ -1,13 +1,35 @@
-//Foundation
-@import "parts/grid";
+/* ==========================================================================
+Settings | Global variables config switches (colours, screen sizes)
+========================================================================== */
+@charset "UTF-8";
+@import "settings/_colors.scss";
+@import "settings/_fonts.scss";
 
-//Partes do Site
+/* ==========================================================================
+Generic | Ground-zero styles (normalize/reset.css, box-sizing)
+========================================================================== */
 
-@import "modules";
-@import "parts/section";
+@import "compass"; /* Compass Mixins */
+@import "generic/_tools.scss"; /* Tools | Functions and mixins */
+@import "generic/_reset.scss";
+@import "generic/_base.scss"; /* Base | Unclassed HTML elements (type selectors) */
 
-//Responsive
+/* ==========================================================================
+Components | Styled objects, chunks of UI
+========================================================================== */
 
-@media (max-width: 768px){
-	@import "parts/mobile/768";
-}
+//======== GENERAL COMPONENTS =========//
+
+//Header + Footer //
+
+//======== BODY COMPONENTS ======== //
+
+/*Home*/
+@import "components/home/_myhome";
+
+/*Responsive */
+@import "components/responsive/_responsive";
+
+/* ==========================================================================
+Trumps | Helpers and overrides, e.g.
+========================================================================== */
