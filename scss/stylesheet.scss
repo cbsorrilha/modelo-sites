@@ -9,7 +9,7 @@ Settings | Global variables config switches (colours, screen sizes)
 Generic | Ground-zero styles (normalize/reset.css, box-sizing)
 ========================================================================== */
 
-@import "compass"; /* Compass Mixins */
+// @import "compass"; /* Compass Mixins */
 @import "generic/_tools.scss"; /* Tools | Functions and mixins */
 @import "generic/_reset.scss";
 @import "generic/_base.scss"; /* Base | Unclassed HTML elements (type selectors) */

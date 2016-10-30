@@ -2,9 +2,9 @@
    --------  Tools / sprite ---------
    ======================================= */
 
-@import "compass/utilities/sprites";
+// @import "compass/utilities/sprites";
 
-$sprites: sprite-map("sprite/*.png", $spacing: 10px);
+// $sprites: sprite-map("sprite/*.png", $spacing: 10px);
 
 @mixin bg-sprite(
   $name,
